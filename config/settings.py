@@ -14,6 +14,11 @@ superuser
 user1
 user1@email.com
 pw11
+
+normal user:
+user2
+user@email.com
+aaaapw22
 """
 
 from pathlib import Path
@@ -132,3 +137,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
