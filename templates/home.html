@@ -14,11 +14,10 @@
 <img class = "bookcover" src=" {% static 'images/cover.jpeg' %} " alt=""><br>
 {% if user.is_authenticated %} 
     <p>Hi {{ user.username }}, with email:  {{user.email}}</p>
-    <a href="{% url 'logout' %}">logout</a>
+    <a href="{% url 'account_logout' %}">logout</a>
 {% else %}
     <p>You are not logged in</p>
-    <a href="{% url 'login' %}">login</a><br>
-    <a href="{% url 'signup' %}">sigup</a>
+
 
 
 {% endif %}

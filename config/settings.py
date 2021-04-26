@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 
 
+==========================================================================================================
+                        MY NOTES  ---- START
+==========================================================================================================
+
 superuser
 user1
 user1@email.com
@@ -19,6 +23,21 @@ normal user:
 user2
 user@email.com
 aaaapw22
+
+user3
+user3@email.com
+funlongpw3
+TODO 
+ - Check for bloat - pg 109 - delete accounts/urls.py & accounts/views.py 
+
+
+
+
+==========================================================================================================
+                        MY NOTES  ---- END
+==========================================================================================================
+
+
 """
 
 from pathlib import Path
@@ -48,9 +67,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # Third-party
     'crispy_forms',
+    'allauth',
+    'allauth.account',
 
     # Local
     'accounts',  
@@ -154,5 +176,19 @@ STATICFILES_FINDERS = [ # new
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+
+# django-allauth config
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT = 'home'
+SITE_ID = 1 # new
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend', # new
+)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
+ACCOUNT_SESSION_REMEMBER = True
+
+ACCOUNT_USERNAME_REQUIRED = False # new
+ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
+ACCOUNT_EMAIL_REQUIRED = True # new
+ACCOUNT_UNIQUE_EMAIL = True # new
