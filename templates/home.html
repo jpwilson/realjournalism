@@ -14,7 +14,6 @@
 <img class = "bookcover" src=" {% static 'images/cover.jpeg' %} " alt=""><br>
 {% if user.is_authenticated %} 
     <p>Hi {{ user.username }}, with email:  {{user.email}}</p>
-    <a href="{% url 'account_logout' %}">logout</a>
 {% else %}
     <p>You are not logged in</p>
 
