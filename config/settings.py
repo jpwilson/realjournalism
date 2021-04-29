@@ -36,6 +36,9 @@ user4@email.com
 funlongpw4 
 
 
+TODO Delete snippets below:
+1. <h3><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></h3>  - book_list.html:8
+
 
 ==========================================================================================================
                         MY NOTES  ---- END
