@@ -9,6 +9,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    cover = models.ImageField(upload_to='covers/', height_field=None, width_field=None, max_length=None, blank=True)
 
 
 
@@ -38,5 +39,7 @@ class Review(models.Model):
 
     def get_absolute_url(self):
         return reverse("Reviews_detail", args=[str(self.id)])
+
+
 
  
