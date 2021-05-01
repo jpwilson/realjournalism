@@ -29,6 +29,10 @@ user3@email.com
 funlongpw3  - this is used for chap9 - email 
 
 
+#User for testing permissions
+special
+spesh321
+
 TODO 
  - Check for bloat - pg 109 - delete accounts/urls.py & accounts/views.py 
 
